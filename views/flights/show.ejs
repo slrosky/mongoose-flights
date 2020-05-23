@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a> 
+        || 
+        <a href="/flights/new">New Flight</a> 
+        || 
+        <a href="/flights">All Flights</a>
+    </nav>
+    <section id="show-page">
+        <div>Airline: </div>
+        <div><%= flight.airline %></div>
+        <div>Airport: </div>
+        <div><%= flight.airport %></div>
+        <div>Flight Number: </div>
+        <div><%= flight.flightNo %></div>
+        <div>Departs: </div>
+        <div><%= flight.departs %></div>
+        <div>Destination: </div>
+        <div><%= flight.destinations %></div>
+      </section>
+      <h2>Add A Destination</h2>
+    <form action="/flights/<%= flight._id %>/destination" method="POST">
+      <label>Airport:
+        <select name="airport">
+            <option value="DEN" selected>DEN</option>
+            <option value="AUS" selected>AUS</option>
+            <option value="DFW" selected>DFW</option>
+            <option value="LAX" selected>LAX</option>
+            <option value="SAN" selected>SAN</option>
+        </select>
+      </label><br>
+      <label>Arrival Time & Date
+        <input type="Date" name="departs" value="datetime-local">
+      </label>
+</body>
+</html>
